@@ -45,6 +45,37 @@ docker ps -a
 
 MAKE SURE both mongodb, influxdb and mosquitto service broker container are running before run server and sensor
 
+```
+docker-compose up
+```
+
+Output
+
+```
+Creating network "multiples-sensor-mqtt-mongo_bridge-network" with driver "bridge"
+Creating influxdb  ... done
+Creating mongo     ... done
+Creating mosquitto ... done
+Creating sensors   ... done
+Creating server    ... done
+Attaching to influxdb, mosquitto, mongo, server, sensors
+```
+
+```
+docker ps
+```
+
+Output
+
+```
+CONTAINER ID   IMAGE                      COMMAND                  CREATED         STATUS         PORTS                                           NAMES
+8d9d3560c52a   server                     "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes                                                   server
+cd80a16a81dd   sensors                    "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes                                                   sensors
+203c661d7a38   mongo:latest               "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp   mongo
+828bad6bedf8   eclipse-mosquitto:latest   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   0.0.0.0:1883->1883/tcp, :::1883->1883/tcp       mosquitto
+7642b5dde135   influxdb:latest            "/entrypoint.sh infl…"   2 minutes ago   Up 2 minutes   0.0.0.0:8086->8086/tcp, :::8086->8086/tcp       influxdb
+```
+
 ![Docker PS](doc/docker_ps.png)
 
 ## Starting SERVER
