@@ -1,22 +1,49 @@
+# multiples-sensor-mqtt-mongo
+
+# 🚀 A sample application built that shows how MQTT could be used to manage a multiples sensor sent data to a server, which will record it into da mongo and influxdb data base 🚀
+
+https://github.com/coding-to-music/multiples-sensor-mqtt-mongo
+
+From / By https://github.com/agneisilva
+
+https://github.com/agneisilva/Multiples-sensor-mqtt-mongo
+
+## Environment variables:
+
+```java
+
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/multiples-sensor-mqtt-mongo.git
+git push -u origin main
+```
+
 # MQTT Multiples sensor Example Application
 
 A sample application built that shows how MQTT could be used to manage a multiples sensor sent data
-to a server,  which will record it into da mongo and influxdb data base
+to a server, which will record it into da mongo and influxdb data base
 
-
-##RUN 
+##RUN
 
 for localhost porpose use command line for start mqtt container and mongodb
 
 docker run --name mongodb -p 27017:27017 -d mongo
 
-docker run -it -d -p 1883:1883 -p 9001:9001  eclipse-mosquitto
+docker run -it -d -p 1883:1883 -p 9001:9001 eclipse-mosquitto
 
- docker run -d -p 8086:8086 influxdb:latest
+docker run -d -p 8086:8086 influxdb:latest
 
 docker ps -a
 
-MAKE SURE both mongodb, influxdb and mosquitto service broker container are running before run server and sensor 
+MAKE SURE both mongodb, influxdb and mosquitto service broker container are running before run server and sensor
 
 ![Docker PS](doc/docker_ps.png)
 
@@ -25,17 +52,16 @@ MAKE SURE both mongodb, influxdb and mosquitto service broker container are runn
 access server folder and run:
 
 ```
-npm install 
+npm install
 ```
 
 ```
 node server.js
-or 
+or
 npm start
 ```
 
 ![Server saving data](doc/server_saved_data.png)
-
 
 ## Starting Sensor
 
@@ -46,34 +72,28 @@ npm install
 
 node simulateMultiplesSensor.js 5
 ```
+
 ![Started 5 sensor async](doc/started_5_sensor.png)
 
-
 where "5" is the number of sensor you want to simulate. You can use any positive number you want.
-the more,  more it will be sensors initialized in your memory.
-
+the more, more it will be sensors initialized in your memory.
 
 You can use CymaticLabs.InfluxDB.Studio project to select data in influxdb
- [InfluxDB Studio](https://github.com/CymaticLabs/InfluxDBStudio)
+[InfluxDB Studio](https://github.com/CymaticLabs/InfluxDBStudio)
 ![InfluxDb Studio](doc/InfluxDBStudio.png)
 
+and
 
- and 
-
-
-Use Mongo Compass Comunity to select data in MongoDb 
+Use Mongo Compass Comunity to select data in MongoDb
 [InfluxDB Studio](https://www.mongodb.com/products/compass)
 ![Mongo Compass](doc/mongoCompass.png)
 
+Docker Commands:
 
-
-
-Docker Commands:  
-
-cd .\server 
+cd .\server
 docker build . -t server
 
-cd .\sensor 
+cd .\sensor
 docker build . -t sensors
 
 docker-compose -f docker-compose.yml --no-ansi build --no-cache

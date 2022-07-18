@@ -1,0 +1,24 @@
+{
+  "name": "multiples-sensor-mqtt-mongo",
+  "version": "1.0.0",
+  "description": "A sample application built that shows how MQTT could be used to manage a multiples sensor sent data to a server,  which will record it into da mongo and influxdb data base",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agneisilva/Multiples-sensor-mqtt-mongo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agneisilva/Multiples-sensor-mqtt-mongo/issues"
+  },
+  "homepage": "https://github.com/agneisilva/Multiples-sensor-mqtt-mongo#readme"
+}
