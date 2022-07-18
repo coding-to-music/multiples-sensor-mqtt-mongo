@@ -5,7 +5,8 @@
   "main": "simulateMultiplesSensor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node simulateMultiplesSensor.js"
+    "start": "node simulateMultiplesSensor.js",
+    "start5": "node simulateMultiplesSensor.js 5"
   },
   "author": "Agnei Silva",
   "license": "ISC",

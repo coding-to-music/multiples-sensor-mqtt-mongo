@@ -83,13 +83,15 @@ cd80a16a81dd   sensors                    "docker-entrypoint.s…"   2 minutes a
 access server folder and run:
 
 ```
+cd server
+
 npm install
 ```
 
 ```
 node server.js
 or
-npm start
+npm run start
 ```
 
 ![Server saving data](doc/server_saved_data.png)
@@ -99,8 +101,13 @@ npm start
 access sensor folder and run:
 
 ```
+cd ../sensor
+
 npm install
 
+npm run start
+
+# or
 node simulateMultiplesSensor.js 5
 ```
 
